@@ -36,9 +36,9 @@ def tick():
             sys.exit()
         elif event.type == KEYDOWN:
             if event.key == K_LEFT:
-                PADDLE.rect.centerx -= 10
+                PADDLE.rect.centerx -= 5
             elif event.key == K_RIGHT:
-                PADDLE.rect.centerx += 10
+                PADDLE.rect.centerx += 5
     if BALL.rect.centery < 1000:
         BALL.move()
 
@@ -59,7 +59,7 @@ def tick():
         BALL.dir = 180 - BALL.dir
     if BALL.rect.centery < 0:
         BALL.dir = -BALL.dir
-        BALL.speed = 15
+        BALL.speed = 10
 
 pygame.init()
 pygame.key.set_repeat(5, 5)
@@ -74,7 +74,7 @@ def main():
     myfont = pygame.font.SysFont(None, 80)
     mess_clear = myfont.render("Cleared!", True, (255, 255, 0))
     mess_over = myfont.render("Game Over!", True, (255, 255, 0))
-    fps = 30
+    fps = 60
     colors = [(255, 0, 0), (255, 165, 0), (242, 242, 0),
               (0, 128, 0), (128, 0, 128), (0, 0, 250)]
 
